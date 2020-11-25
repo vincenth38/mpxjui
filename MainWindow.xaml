@@ -1,0 +1,18 @@
+﻿<Window x:Name="MPJX" x:Class="MPXJUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MPXJUI"
+        mc:Ignorable="d"
+        Title="MPJX Converter" Height="150" Width="400" ResizeMode="NoResize">
+    <StackPanel Margin="10">
+        <Rectangle HorizontalAlignment="Center" VerticalAlignment="Center" Drop="ImagePanel_Drop" AllowDrop="True" MinHeight="70" MinWidth="276">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="Flat_plus_icon.svg.png" Stretch="Uniform"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBlock  Text="{Binding File, Mode=TwoWay}" Margin="0,5,0,0" HorizontalAlignment="Center"/>
+    </StackPanel>
+
+</Window>
