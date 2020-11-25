@@ -23,10 +23,10 @@ jobs:
       name: Checkout Code
      
     - name: Add msbuild to PATH
-      uses: microsoft/setup-msbuild@v1.0.2
+      uses: microsoft/setup-msbuild@latest
        
     - name: Setup NuGet
-      uses: NuGet/setup-nuget@v1.0.2
+      uses: NuGet/setup-nuget@latest
      
     - name: Restore NuGet Packages
       run: nuget restore MPXJUI.sln
@@ -35,7 +35,7 @@ jobs:
       run: msbuild MPXJUI.sln /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile
  
     - name: Upload Artifact
-      uses: actions/upload-artifact@v1.0.0
+      uses: actions/upload-artifact@latest
       with:
         name: published_app
         path: bin\Release\Publish
