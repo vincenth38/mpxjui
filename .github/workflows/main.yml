@@ -31,11 +31,11 @@ jobs:
     - name: Restore NuGet Packages
       run: nuget restore MPXJUI.sln
  
-    - name: Build and Publish Web App
-      run: msbuild MPXJUI.sln /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile
+    - name: Build and Publish App
+      run: msbuild MPXJUI.sln /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile /target:publish /p:PublishDir=build\
  
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
       with:
-        name: published_app
-        path: bin\Release
+        name: mpxjui
+        path: build
