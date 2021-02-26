@@ -278,7 +278,7 @@
   <Target Name="Build">
     <ZipDir
       ZipFileName="build.zip"
-      DirectoryName="build"
+      DirectoryName="obj/build"
     />
   </Target>
 
