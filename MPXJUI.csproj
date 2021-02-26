@@ -282,7 +282,7 @@
   <Target Name="AfterBuild">
     <ZipDir
       ZipFileName="build.zip"
-      DirectoryName="bin/release"
+      DirectoryName="build/"
     />
   </Target>
 
