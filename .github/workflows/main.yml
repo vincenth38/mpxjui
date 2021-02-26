@@ -21,6 +21,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2.3.4
       name: Checkout Code
+      with:
+        fetch-depth: '0'
      
     - name: Add msbuild to PATH
       uses: microsoft/setup-msbuild@v1.0.2
@@ -34,6 +36,12 @@ jobs:
     - name: Build App
       run: msbuild MPXJUI.sln /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile /target:publish /p:PublishDir=build\
 
+    - name: Bump version and push tag
+      uses: anothrNick/github-tag-action@1.26.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        WITH_V: true
+        
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
