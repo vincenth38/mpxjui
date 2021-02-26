@@ -19,10 +19,12 @@ jobs:
     runs-on: windows-latest
  
     steps:
-    - uses: actions/checkout@v2.3.4
-      name: Checkout Code
+    - uses: actions/checkout@v2
+    - name: Checkout Code
+      id: tag_version
+      uses: mathieudutour/github-tag-action@v5.2
       with:
-        fetch-depth: '0'
+        github_token: ${{ secrets.GITHUB_TOKEN }}
      
     - name: Add msbuild to PATH
       uses: microsoft/setup-msbuild@v1.0.2
@@ -42,11 +44,12 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: ${{ github.ref }}
-        release_name: ${{ steps.version.outputs.version }}
+        tag_name: ${{ steps.tag_version.outputs.new_tag }}
+        release_name: Release ${{ steps.tag_version.outputs.new_tag }}
+        body: ${{ steps.tag_version.outputs.changelog }}
         draft: false
         prerelease: false
-        
+  
     - name: Upload Release Asset
       id: upload-release-asset 
       uses: actions/upload-release-asset@v1
