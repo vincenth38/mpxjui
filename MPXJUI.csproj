@@ -275,7 +275,34 @@
     </PropertyGroup>
     <Error Condition="!Exists('packages\net.sf.mpxj-ikvm.9.0.0\build\net.sf.mpxj-ikvm.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\net.sf.mpxj-ikvm.9.0.0\build\net.sf.mpxj-ikvm.targets'))" />
   </Target>
-  <Target Name="AfterBuild" Condition="'$(Configuration)'=='Release'">
-    <Zip ZipFileName="$(OutDir)\output.zip" WorkingDirectory="$(OutDir)" Files="@(ZipFiles)" Flatten="False" Quiet="false" />
+  <Target Name="Build">
+    <ZipDir
+      ZipFileName="build.zip"
+      DirectoryName="build"
+    />
   </Target>
+
+  <UsingTask TaskName="ZipDir" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v12.0.dll">
+    <ParameterGroup>
+      <ZipFileName ParameterType="System.String" Required="true" />
+      <DirectoryName ParameterType="System.String" Required="true" />
+    </ParameterGroup>
+    <Task>
+      <Reference Include="System.IO.Compression.FileSystem" />
+      <Using Namespace="System.IO.Compression" />
+      <Code Type="Fragment" Language="cs"><![CDATA[
+        try
+        {
+          Log.LogMessage(string.Format("Zipping Directory {0} to {1}", DirectoryName, ZipFileName));
+          ZipFile.CreateFromDirectory( DirectoryName, ZipFileName );
+          return true;
+        }
+        catch(Exception ex)
+        {
+          Log.LogErrorFromException(ex);
+          return false;
+        }
+      ]]></Code>
+    </Task>
+  </UsingTask>
 </Project>
