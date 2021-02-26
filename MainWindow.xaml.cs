@@ -54,7 +54,7 @@ namespace MPXJUI
             try
             {
                 PrimaveraXERFileReader reader = new PrimaveraXERFileReader();
-                //ProjectReader reader = ProjectReaderUtility.getProjectReader(file);
+                //ProjectReader reader = ProjectReaderUtility.getProjectReader(file); 
                 Map activities = reader.ActivityFieldMap;
 
                 activities.put(TaskField.TEXT10, "Activity_Id");
