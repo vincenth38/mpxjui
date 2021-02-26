@@ -4,8 +4,10 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 using net.sf.mpxj;
+using java.util;
 using net.sf.mpxj.reader;
 using net.sf.mpxj.mspdi;
+using net.sf.mpxj.primavera;
 
 namespace MPXJUI
 {
@@ -51,19 +53,13 @@ namespace MPXJUI
         {
             try
             {
-                ProjectReader reader = ProjectReaderUtility.getProjectReader(file);
+                PrimaveraXERFileReader reader = new PrimaveraXERFileReader();
+                //ProjectReader reader = ProjectReaderUtility.getProjectReader(file);
+                Map activities = reader.ActivityFieldMap;
+
+                activities.put(TaskField.TEXT10, "Activity_Id");
+
                 ProjectFile projectFile = reader.read(file);
-
-      //
-      // Create TEXT10 _ Activity_ID
-      //
-      CustomFieldContainer customFields = file.getCustomFields();
-      CustomField field = customFields.getCustomField(TaskField.TEXT10);
-      field.setAlias("ACtivity_ID");
-      task.setText(10, task.getActivityID())
-
-
-
                 MSPDIWriter writer = new MSPDIWriter();
                 writer.write(projectFile, file + ".xml");
                 File = "Done";
