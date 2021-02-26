@@ -21,6 +21,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2.3.4
       name: Checkout Code
+      with:
+        fetch-depth: '0'
      
     - name: Add msbuild to PATH
       uses: microsoft/setup-msbuild@v1.0.2
@@ -33,19 +35,26 @@ jobs:
  
     - name: Build App
       run: msbuild MPXJUI.sln /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile /target:publish /p:PublishDir=build\
- 
-    - name: Upload Artifact
-      uses: actions/upload-artifact@v2
+        
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        name: mpxjui
-        file: build.zip
-
-    - name: upload linux artifact
+        tag_name: ${{ github.ref }}
+        release_name: ${{ steps.version.outputs.version }}
+        draft: false
+        prerelease: false
+        
+    - name: Upload Release Asset
+      id: upload-release-asset 
       uses: actions/upload-release-asset@v1
       env:
-        GITHUB_TOKEN: ${{ github.token }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: /
-        asset_name: buil.zip
-        asset_content_type: application/gzip
+        upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+        asset_path: ./build.zip
+        asset_name: mpxjui.zip
+        asset_content_type: application/zip
+
