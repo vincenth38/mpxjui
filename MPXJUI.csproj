@@ -181,9 +181,6 @@
     <Reference Include="poi-4.1.2, Version=9.0.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
       <HintPath>packages\net.sf.mpxj-common.9.0.0\lib\poi-4.1.2.dll</HintPath>
     </Reference>
-    <Reference Include="rtfparserkit-1.15.0, Version=8.3.4.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
-      <HintPath>packages\net.sf.mpxj-common.8.3.4\lib\rtfparserkit-1.15.0.dll</HintPath>
-    </Reference>
     <Reference Include="rtfparserkit-1.16.0, Version=9.0.0.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
       <HintPath>packages\net.sf.mpxj-common.9.0.0\lib\rtfparserkit-1.16.0.dll</HintPath>
     </Reference>
