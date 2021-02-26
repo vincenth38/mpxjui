@@ -275,4 +275,7 @@
     </PropertyGroup>
     <Error Condition="!Exists('packages\net.sf.mpxj-ikvm.9.0.0\build\net.sf.mpxj-ikvm.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\net.sf.mpxj-ikvm.9.0.0\build\net.sf.mpxj-ikvm.targets'))" />
   </Target>
+  <Target Name="AfterBuild" Condition="'$(Configuration)'=='Release'">
+    <Zip ZipFileName="$(OutDir)\output.zip" WorkingDirectory="$(OutDir)" Files="@(ZipFiles)" Flatten="False" Quiet="false" />
+  </Target>
 </Project>
