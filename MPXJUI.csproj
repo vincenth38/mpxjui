@@ -269,13 +269,17 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\net.sf.mpxj-ikvm.9.0.0\build\net.sf.mpxj-ikvm.targets" Condition="Exists('packages\net.sf.mpxj-ikvm.9.0.0\build\net.sf.mpxj-ikvm.targets')" />
+  <Target Name="BeforeBuild">
+    <Message Text="Deleting build.zip"/>
+    <Delete Files="build.zip" />
+  </Target>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('packages\net.sf.mpxj-ikvm.9.0.0\build\net.sf.mpxj-ikvm.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\net.sf.mpxj-ikvm.9.0.0\build\net.sf.mpxj-ikvm.targets'))" />
   </Target>
-  <Target Name="Build">
+  <Target Name="AfterBuild">
     <ZipDir
       ZipFileName="build.zip"
       DirectoryName="obj/build"
