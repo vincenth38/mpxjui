@@ -54,6 +54,16 @@ namespace MPXJUI
                 ProjectReader reader = ProjectReaderUtility.getProjectReader(file);
                 ProjectFile projectFile = reader.read(file);
 
+      //
+      // Create TEXT10 _ Activity_ID
+      //
+      CustomFieldContainer customFields = file.getCustomFields();
+      CustomField field = customFields.getCustomField(TaskField.TEXT10);
+      field.setAlias("ACtivity_ID");
+      task.setText(10, task.getActivityID())
+
+
+
                 MSPDIWriter writer = new MSPDIWriter();
                 writer.write(projectFile, file + ".xml");
                 File = "Done";
