@@ -64,9 +64,14 @@ namespace MPXJUI
                 activities.setText(10, task.getActivityID())
                 //activities.put(TaskField.TEXT10, "Activity_Id");
 
-                
+               
                 
                 MSPDIWriter writer = new MSPDIWriter();
+                
+                CustomFieldContainer customFields = file.getCustomFields();
+                CustomField field = customFields.getCustomField(TaskField.TEXT10);
+                field.setAlias("Activity_ID");
+                
                 writer.write(projectFile, file + ".xml");
                 File = "Done";
             }
