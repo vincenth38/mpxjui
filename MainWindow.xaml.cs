@@ -61,7 +61,7 @@ namespace MPXJUI
                 Map activities = reader.ActivityFieldMap;
 
                 //copy the activity P6 activity ID into a text field
-                activities.setText(10, task.getActivityID())
+                activities.setText(10, task.getActivityID());
                 //activities.put(TaskField.TEXT10, "Activity_Id");
 
                 activities.put(TaskField.TEXT10, "Activity_Id");
