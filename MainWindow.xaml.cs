@@ -51,28 +51,20 @@ namespace MPXJUI
         {
             try
             {
-                ProjectReader reader = ProjectReaderUtility.getProjectReader(file);
-                  
-              //  PrimaveraXERFileReader reader = new PrimaveraXERFileReader();
+            
+                PrimaveraXERFileReader reader = new PrimaveraXERFileReader();
+                //ProjectReader reader = ProjectReaderUtility.getProjectReader(file); 
+                Map activities = reader.ActivityFieldMap;
+                
+                activities.setText(10, task.getActivityID());
+                
+             //   activities.put(TaskField.TEXT10, "Activity_Id");
 
                 ProjectFile projectFile = reader.read(file);
-                ProjectProperties properties = file.getProjectProperties();
-                //ProjectReader reader = ProjectReaderUtility.getProjectReader(file); 
-              //  Map activities = reader.ActivityFieldMap;
-
-                //copy the activity P6 activity ID into a text field
-                activities.setText(10, task.getActivityID());
-                //activities.put(TaskField.TEXT10, "Activity_Id");
-
-                CustomFieldContainer customFields = file.getCustomFields();
-                CustomField field = customFields.getCustomField(TaskField.TEXT10);
-                  field.setAlias("Activity_Id");
-
-                
                 MSPDIWriter writer = new MSPDIWriter();
                 writer.write(projectFile, file + ".xml");
-                File = "Done";
-
+                File = "Done"
+                
 
 
             }
