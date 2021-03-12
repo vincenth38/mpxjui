@@ -51,9 +51,9 @@ namespace MPXJUI
         {
             try
             {
-              //  ProjectReader reader = ProjectReaderUtility.getProjectReader(file);
+                ProjectReader reader = ProjectReaderUtility.getProjectReader(file);
                   
-                PrimaveraXERFileReader reader = new PrimaveraXERFileReader();
+              //  PrimaveraXERFileReader reader = new PrimaveraXERFileReader();
 
                 ProjectFile projectFile = reader.read(file);
 
