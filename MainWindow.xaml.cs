@@ -57,8 +57,8 @@ namespace MPXJUI
                 //ProjectReader reader = ProjectReaderUtility.getProjectReader(file); 
                 Map activities = reader.ActivityFieldMap;
 
-                //activities.put(TaskField.TEXT10, "Activity_Id");
-                activities.setText(10, task.getActivityID());       
+                activities.put(TaskField.TEXT10, "Activity_Id");
+                //activities.setText(10, task.getActivityID());       
                 ProjectFile projectFile = reader.read(file);
                 MSPDIWriter writer = new MSPDIWriter();
                 writer.write(projectFile, file + ".xml");
