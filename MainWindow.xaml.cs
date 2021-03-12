@@ -83,3 +83,6 @@ namespace MPXJUI
         {
             DataContext = this;
             InitializeComponent();
+}
+}
+}
