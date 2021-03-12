@@ -63,7 +63,7 @@ namespace MPXJUI
                 ProjectFile projectFile = reader.read(file);
                 MSPDIWriter writer = new MSPDIWriter();
                 writer.write(projectFile, file + ".xml");
-                File = "Done"
+                File = "Done";
                 
 
 
