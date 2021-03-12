@@ -58,7 +58,7 @@ namespace MPXJUI
                 ProjectFile projectFile = reader.read(file);
 
                 //ProjectReader reader = ProjectReaderUtility.getProjectReader(file); 
-                Map activities = reader.ActivityFieldMap;
+              //  Map activities = reader.ActivityFieldMap;
 
                 //copy the activity P6 activity ID into a text field
                 activities.setText(10, task.getActivityID());
