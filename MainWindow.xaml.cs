@@ -1,11 +1,13 @@
-﻿using System;
+using System;
 using System.Windows;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 using net.sf.mpxj;
+using java.util;
 using net.sf.mpxj.reader;
 using net.sf.mpxj.mspdi;
+using net.sf.mpxj.primavera;
 
 namespace MPXJUI
 {
@@ -51,22 +53,16 @@ namespace MPXJUI
         {
             try
             {
-            
                 PrimaveraXERFileReader reader = new PrimaveraXERFileReader();
                 //ProjectReader reader = ProjectReaderUtility.getProjectReader(file); 
                 Map activities = reader.ActivityFieldMap;
-                
-                activities.setText(10, task.getActivityID());
-                
-             //   activities.put(TaskField.TEXT10, "Activity_Id");
 
+                //activities.put(TaskField.TEXT10, "Activity_Id");
+                activities.setText(10, task.getActivityID());       
                 ProjectFile projectFile = reader.read(file);
                 MSPDIWriter writer = new MSPDIWriter();
                 writer.write(projectFile, file + ".xml");
                 File = "Done";
-                
-
-
             }
             catch (Exception e)
             {
@@ -87,6 +83,3 @@ namespace MPXJUI
         {
             DataContext = this;
             InitializeComponent();
-        }
-    }
-}
