@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -276,7 +276,7 @@
     </PropertyGroup>
     <Error Condition="!Exists('packages\net.sf.mpxj-ikvm.9.1.0\build\net.sf.mpxj-ikvm.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\net.sf.mpxj-ikvm.9.1.0\build\net.sf.mpxj-ikvm.targets'))" />
   </Target>
-  <Target Name="AfterBuild">
+  <Target Name="Build Zip" AfterTargets="_CopyFilesToPublishFolder">
     <ZipDir
       ZipFileName="build.zip"
       DirectoryName="build/"
