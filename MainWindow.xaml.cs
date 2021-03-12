@@ -55,7 +55,7 @@ namespace MPXJUI
                   
               //  PrimaveraXERFileReader reader = new PrimaveraXERFileReader();
 
-                //ProjectFile projectFile = reader.read(file);
+                ProjectFile projectFile = reader.read(file);
                 ProjectProperties properties = file.getProjectProperties();
                 //ProjectReader reader = ProjectReaderUtility.getProjectReader(file); 
               //  Map activities = reader.ActivityFieldMap;
