@@ -44,7 +44,7 @@ namespace MPXJUI
 
                 // Assuming you have one file that you care about, pass it off to whatever
                 // handling code you have defined.
-                file = files[0];
+                File = files[0];
                 HandleFileOpen(files[0]);
             }
         }
@@ -67,7 +67,7 @@ namespace MPXJUI
                 
                 MSPDIWriter writer = new MSPDIWriter();
                 writer.write(projectFile, file + ".xml");
-                file = "Done";
+                File = "Done";
             }
             catch (Exception e)
             {
