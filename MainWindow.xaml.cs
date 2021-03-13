@@ -44,7 +44,7 @@ namespace MPXJUI
 
                 // Assuming you have one file that you care about, pass it off to whatever
                 // handling code you have defined.
-                File = files[0];
+                file = files[0];
                 HandleFileOpen(files[0]);
             }
         }
@@ -53,17 +53,21 @@ namespace MPXJUI
         {
             try
             {
-               // PrimaveraXERFileReader reader = new PrimaveraXERFileReader();
-                ProjectReader reader = ProjectReaderUtility.getProjectReader(file); 
-               // Map activities = reader.ActivityFieldMap;
-
-                //activities.put(TaskField.TEXT10, "Activity_Id");
-                //activities.setText(10, task.getActivityID());       
+                PrimaveraXERFileReader reader = new PrimaveraXERFileReader();
                 
                 ProjectFile projectFile = reader.read(file);
+               
+               // ProjectReader reader = ProjectReaderUtility.getProjectReader(file); 
+                Map activities = reader.ActivityFieldMap;
+
+               activities.put(TaskField.TEXT10, "Activity_Id");
+                //activities.setText(10, task.getActivityID());       
+               
+               
+                
                 MSPDIWriter writer = new MSPDIWriter();
                 writer.write(projectFile, file + ".xml");
-                File = "Done";
+                file = "Done";
             }
             catch (Exception e)
             {
