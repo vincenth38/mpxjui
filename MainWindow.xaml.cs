@@ -74,13 +74,13 @@ namespace MPXJUI
                //
 // Read an Activity column called an_example_field and store it in TEXT10
 //
-activityFieldMap.put(TaskField.TEXT10, task_code);
+//activityFieldMap.put(TaskField.TEXT10, task_code);
 
 
 
 //Map activities_number fieldTypeMap = reader.getFieldTypeMap();
 // fieldTypeMap.put("task_code", XerFieldType.INTEGER);
-Map activities activityFieldMap = reader.getActivityFieldMap();
+Map activityFieldMap = reader.getActivityFieldMap();
 activityFieldMap.put(TaskField.TEXT10, "task_code");
 
 
