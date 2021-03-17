@@ -5,11 +5,9 @@ using System.Runtime.CompilerServices;
 
 using net.sf.mpxj;
 using java.util;
-//using net.sf.mpxj.reader;
 using net.sf.mpxj.mspdi;
 
-using net.sf.mpxj.ProjectFile;
-using net.sf.mpxj.reader.UniversalProjectReader;
+using net.sf.mpxj.reader;
 
 //using primavera reader
 //using net.sf.mpxj.primavera;
