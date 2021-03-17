@@ -36,7 +36,7 @@ jobs:
       run: nuget restore MPXJUI.sln
  
     - name: Build App
-      run: msbuild MPXJUI.sln /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile /target:publish /p:PublishDir=build\
+      run: msbuild MPXJUI.sln /p:Configuration=Release /p:DeployOnBuild=false /p:PublishProfile=FolderProfile /target:publish /p:PublishDir=build\
         
     - name: Create Release
       id: create_release
