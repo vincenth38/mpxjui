@@ -60,30 +60,19 @@ namespace MPXJUI
             //UniversalProjectReader reader = new UniversalProjectReader();
             
                 PrimaveraXERFileReader reader = new PrimaveraXERFileReader();
-                ProjectFile project = reader.read(file);
-                //ProjectFile projectFile = reader.read(file);
-               
-               // ProjectReader reader = ProjectReaderUtility.getProjectReader(file); 
-               // Map activities = reader.ActivityFieldMap;
-
-              // activities.put(TaskField.TEXT10, "Activity_Id");
-              // activities.put(TaskField.TEXT10, "task_code");
-               //activities.put(TaskField.TEXT10, task.getActivityID());
-             //  activities.setText(11, task.getActivityID());       
-               
-               //
-// Read an Activity column called an_example_field and store it in TEXT10
-//
-//activityFieldMap.put(TaskField.TEXT10, task_code);
+            
+Map<FieldType, String> activityFieldMap = reader.getActivityFieldMap();
+activityFieldMap.put(TaskField.TEXT10, "an_example_field");
 
 
-
+    ProjectFile project = reader.read(file);
+    
 //Map<String, XerFieldType> fieldTypeMap = reader.getFieldTypeMap();
-Map fieldTypeMap = reader.getFieldTypeMap();
-fieldTypeMap.put("task_code", XerFieldType.STRING);
+//Map fieldTypeMap = reader.getFieldTypeMap();
+//fieldTypeMap.put("task_code", XerFieldType.STRING);
 //Map<FieldType, String> activityFieldMap = reader.getActivityFieldMap();
-Map activityFieldMap = reader.getActivityFieldMap();
-activityFieldMap.put(TaskField.TEXT10, "task_code");
+//Map activityFieldMap = reader.getActivityFieldMap();
+//activityFieldMap.put(TaskField.TEXT10, "task_code");
 
 
 
