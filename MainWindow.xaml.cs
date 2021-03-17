@@ -69,7 +69,7 @@ namespace MPXJUI
                
                 
                 MSPDIWriter writer = new MSPDIWriter();
-                writer.write(projectFile, file + ".xml");
+                writer.write(project, file + ".xml");
                 File = "Done";
             }
             catch (Exception e)
