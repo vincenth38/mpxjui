@@ -78,9 +78,11 @@ namespace MPXJUI
 
 
 
-Map<String, XerFieldType> fieldTypeMap = reader.getFieldTypeMap();
+//Map<String, XerFieldType> fieldTypeMap = reader.getFieldTypeMap();
+Map fieldTypeMap = reader.getFieldTypeMap();
 fieldTypeMap.put("task_code", XerFieldType.STRING);
-Map<FieldType, String> activityFieldMap = reader.getActivityFieldMap();
+//Map<FieldType, String> activityFieldMap = reader.getActivityFieldMap();
+Map activityFieldMap = reader.getActivityFieldMap();
 activityFieldMap.put(TaskField.TEXT10, "task_code");
 
 
