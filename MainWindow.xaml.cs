@@ -64,13 +64,27 @@ namespace MPXJUI
                 //ProjectFile projectFile = reader.read(file);
                
                // ProjectReader reader = ProjectReaderUtility.getProjectReader(file); 
-                Map activities = reader.ActivityFieldMap;
+               // Map activities = reader.ActivityFieldMap;
 
               // activities.put(TaskField.TEXT10, "Activity_Id");
               // activities.put(TaskField.TEXT10, "task_code");
-               activities.put(TaskField.TEXT10, task.getActivityID());
+               //activities.put(TaskField.TEXT10, task.getActivityID());
              //  activities.setText(11, task.getActivityID());       
                
+               //
+// Read an Activity column called an_example_field and store it in TEXT10
+//
+activityFieldMap.put(TaskField.TEXT10, task_code);
+
+
+
+//Map activities_number fieldTypeMap = reader.getFieldTypeMap();
+// fieldTypeMap.put("task_code", XerFieldType.INTEGER);
+Map activities activityFieldMap = reader.getActivityFieldMap();
+activityFieldMap.put(TaskField.TEXT10, "task_code");
+
+
+
              // CustomFieldContainer customFields = reader.getCustomFields();
               //CustomField field = customFields.getCustomField(TaskField.TEXT10);
               //field.setAlias("My Custom Field");
