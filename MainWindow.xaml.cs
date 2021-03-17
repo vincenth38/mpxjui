@@ -61,26 +61,22 @@ namespace MPXJUI
             
                 PrimaveraXERFileReader reader = new PrimaveraXERFileReader();
             
-Map<FieldType, String> activityFieldMap = reader.getActivityFieldMap();
-activityFieldMap.put(TaskField.TEXT10, "an_example_field");
 
+                Map activities = reader.ActivityFieldMap;
+                activities.put(TaskField.TEXT10, "Activity_Id");
+                 activities.put(TaskField.TEXT11, "task_code"");
 
-    ProjectFile project = reader.read(file);
     
 //Map<String, XerFieldType> fieldTypeMap = reader.getFieldTypeMap();
-//Map fieldTypeMap = reader.getFieldTypeMap();
 //fieldTypeMap.put("task_code", XerFieldType.STRING);
 //Map<FieldType, String> activityFieldMap = reader.getActivityFieldMap();
-//Map activityFieldMap = reader.getActivityFieldMap();
 //activityFieldMap.put(TaskField.TEXT10, "task_code");
 
 
 
-             // CustomFieldContainer customFields = reader.getCustomFields();
-              //CustomField field = customFields.getCustomField(TaskField.TEXT10);
-              //field.setAlias("My Custom Field");
+
                
-                
+                ProjectFile project = reader.read(file);
                 MSPDIWriter writer = new MSPDIWriter();
                 writer.write(project, file + ".xml");
                 File = "Done";
