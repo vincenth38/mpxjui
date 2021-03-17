@@ -78,10 +78,11 @@ namespace MPXJUI
 
 
 
-Map activities fieldTypeMap = reader.getFieldTypeMap();
+PrimaveraXERFileReader reader = new PrimaveraXERFileReader();
+Map<String, XerFieldType> fieldTypeMap = reader.getFieldTypeMap();
 fieldTypeMap.put("task_code", XerFieldType.STRING);
-Map activities activityFieldMap = reader.getActivityFieldMap();
-activityFieldMap.put(TaskField.TEXT10, "task_code");
+Map<FieldType, String> activityFieldMap = reader.getActivityFieldMap();
+activityFieldMap.put(TaskField.TEXT10, "task_code")
 
 
 
