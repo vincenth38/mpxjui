@@ -67,8 +67,13 @@ namespace MPXJUI
                 Map activities = reader.ActivityFieldMap;
 
                activities.put(TaskField.TEXT10, "Activity_Id");
-                //activities.setText(10, task.getActivityID());       
+               activities.put(TaskField.TEXT11, "task_code");
                
+             //  activities.setText(11, task.getActivityID());       
+               
+              CustomFieldContainer customFields = project.getCustomFields();
+              CustomField field = customFields.getCustomField(TaskField.TEXT10);
+              field.setAlias("My Custom Field");
                
                 
                 MSPDIWriter writer = new MSPDIWriter();
