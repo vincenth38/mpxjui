@@ -58,7 +58,17 @@ namespace MPXJUI
                 Map activities = reader.ActivityFieldMap;
 
                 activities.put(TaskField.TEXT10, "task_code");
-
+                activities.put(TaskField.TEXT11, "act_work_qty");
+                activities.put(TaskField.TEXT12, "remain_work_qty");
+                activities.put(TaskField.TEXT13, "target_work_qty");
+                activities.put(TaskField.TEXT14, "target_drtn_hr_cnt");
+                activities.put(TaskField.TEXT15, "target_equip_qty");
+                activities.put(TaskField.TEXT16, "act_equip_qty");
+                activities.put(TaskField.TEXT17, "remain_equip_qt");
+                
+                
+                
+                
                 ProjectFile projectFile = reader.read(file);
                 MSPDIWriter writer = new MSPDIWriter();
                 writer.write(projectFile, file + ".xml");
