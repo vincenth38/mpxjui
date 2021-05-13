@@ -58,6 +58,7 @@ namespace MPXJUI
                 Map activities = reader.ActivityFieldMap;
 
                 activities.put(TaskField.TEXT10, "task_code");
+                activities.TaskField.TEXT10.setalias("task_code");
                 activities.put(TaskField.TEXT11, "act_work_qty");
                 activities.put(TaskField.TEXT12, "remain_work_qty");
                 activities.put(TaskField.TEXT13, "target_work_qty");
