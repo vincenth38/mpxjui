@@ -65,8 +65,8 @@ namespace MPXJUI
                 activities.put(TaskField.TEXT15, "target_equip_qty");
                 activities.put(TaskField.TEXT16, "act_equip_qty");
                 activities.put(TaskField.TEXT17, "remain_equip_qt");
-                
-                
+                activities.put(TaskField.TEXT18, "comments");
+                activities.put(TaskField.TEXT19, "BCR#");
                 
                 
                 ProjectFile projectFile = reader.read(file);
