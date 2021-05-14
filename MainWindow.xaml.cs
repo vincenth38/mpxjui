@@ -69,12 +69,12 @@ namespace MPXJUI
                 activities.put(TaskField.TEXT19, "BCR#");
                 
                 
-                        
+                       
                 
                 ProjectFile projectFile = reader.read(file);
                 
-                CustomFieldContainer fields = projectFile.getCustomFields();
-                fields.getCustomField(TaskField.TEXT1).setAlias("task_code");
+               
+                TaskField.TEXT1.setAlias("task_code");
                 
                 
                 MSPDIWriter writer = new MSPDIWriter();
