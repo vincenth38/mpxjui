@@ -78,6 +78,11 @@ namespace MPXJUI
                 
                 
                 MSPDIWriter writer = new MSPDIWriter();
+                foreach (Task task in project.Tasks)
+                {
+                    task.Name = task.ActivityID + "_" + task.Name;
+                }
+
                 writer.write(projectFile, file + ".xml");
                 File = "Done";
             }
