@@ -78,7 +78,7 @@ namespace MPXJUI
                 
                 
                 MSPDIWriter writer = new MSPDIWriter();
-                foreach (Task task in project.Tasks)
+                foreach (Task task in projectFile.Tasks)
                 {
                     task.Name = task.ActivityID + "_" + task.Name;
                 }
