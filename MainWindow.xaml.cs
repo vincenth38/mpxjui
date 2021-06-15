@@ -74,7 +74,7 @@ namespace MPXJUI
                 ProjectFile projectFile = reader.read(file);
                 
                
-            //    TaskField.TEXT1.setAlias("task_code");
+                activities.TEXT1.setAlias("task_code");
                 
                 
                 MSPDIWriter writer = new MSPDIWriter();
