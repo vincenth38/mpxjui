@@ -73,7 +73,7 @@ namespace MPXJUI
                 
                 ProjectFile projectFile = reader.read(file);
                 
-               activities.put(TaskField.TEXT1.setAlias("BCR#");
+               activities.put(TaskField.TEXT10.setAlias("task_code"));
                
                 
                 
