@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MPXJUI"
         mc:Ignorable="d"
-        Title="MPJX Converter" Height="150" Width="400" ResizeMode="NoResize">
+        Title="MPJX Converter: ask vincent if does'nt work" Height="150" Width="400" ResizeMode="NoResize">
     <StackPanel Margin="10">
         <Rectangle HorizontalAlignment="Center" VerticalAlignment="Center" Drop="ImagePanel_Drop" AllowDrop="True" MinHeight="70" MinWidth="276">
             <Rectangle.Fill>
