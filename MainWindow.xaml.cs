@@ -68,34 +68,15 @@ namespace MPXJUI
                 activities.put(TaskField.TEXT18, "comments");
                 activities.put(TaskField.TEXT19, "BCR#");
                 
-                
-                       
+                                     
                  ProjectFile projectFile = reader.read(file);
  
-
-              // projectFile.getCustomFields().setAlias(TaskField.TEXT10, "task_code");
-               
-               //  projectFile.setTaskFieldAlias(TaskField.TEXT10, "task_code");
-             //     projectFile.setEnterpriseCustomField(10,"task_code");
-             //projectFile.getCustomFields(11).setAlias("task_code");
-             
-             
-             
-           //     CustomFieldContainer fields = projectFile.getCustomFields();
-           //     fields.getCustomField(TaskField.TEXT10).setAlias("Task_Code");
-   
-   
- //  projectFile.getCustomFields().getCustomField(TaskField.TEXT10)
-   
-//    projectFile.getCustomFields().getCustomField(TaskField.TEXT10).setAlias("Task_Code");
-                
-                
-//                CustomFieldContainer customFields = projectFile.getCustomFields();
-//                field = customFields.getCustomField(TaskField.TEXT10);
-//                field.setAlias("task_code");
-                
-      CustomFieldContainer customFields = projectFile.getCustomFields();
-      customFields.getCustomField(TaskField.TEXT1).setAlias("Code");
+                 Map customFields = projectFile.getCustomFields;
+                customFields.getCustomField(TaskField.TEXT1).setAlias("Code");
+      
+      
+     // CustomFieldContainer customFields = projectFile.getCustomFields();
+    //  customFields.getCustomField(TaskField.TEXT1).setAlias("Code");
 
                 
                 
