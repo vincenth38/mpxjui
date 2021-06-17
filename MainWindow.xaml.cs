@@ -70,7 +70,7 @@ namespace MPXJUI
                 
                 
                        
-                 ProjectFile file = new ProjectFile();
+                 ProjectFile projectFile = reader.read(file);
  
 
                
