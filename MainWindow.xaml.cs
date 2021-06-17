@@ -90,7 +90,6 @@ namespace MPXJUI
                 Console.WriteLine(e);
                 return 1;
             }
-
             return 0;
         }
 
