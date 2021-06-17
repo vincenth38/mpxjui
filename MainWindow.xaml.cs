@@ -90,7 +90,7 @@ namespace MPXJUI
 //    projectFile.getCustomFields().getCustomField(TaskField.TEXT10).setAlias("Task_Code");
                 
                 
-                customFields = projectFile.getCustomFields();
+                CustomFieldContainer customFields = projectFile.getCustomFields();
                 field = customFields.getCustomField(TaskField.TEXT10);
                 field.setAlias("task_code");
                 
