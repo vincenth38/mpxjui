@@ -90,10 +90,12 @@ namespace MPXJUI
 //    projectFile.getCustomFields().getCustomField(TaskField.TEXT10).setAlias("Task_Code");
                 
                 
-                CustomFieldContainer customFields = projectFile.getCustomFields();
-                field = customFields.getCustomField(TaskField.TEXT10);
-                field.setAlias("task_code");
+//                CustomFieldContainer customFields = projectFile.getCustomFields();
+//                field = customFields.getCustomField(TaskField.TEXT10);
+//                field.setAlias("task_code");
                 
+      CustomFieldContainer customFields = projectFile.getCustomFields();
+      customFields.getCustomField(TaskField.TEXT1).setAlias("Code");
 
                 
                 
@@ -105,6 +107,7 @@ namespace MPXJUI
                 
                 writer.write(projectFile, file + ".xml");
                 File = "Done";
+               
             }
             catch (Exception e)
             {
