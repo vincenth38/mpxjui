@@ -70,19 +70,18 @@ namespace MPXJUI
                 
                 
                        
-                
-                ProjectFile projectFile = reader.read(file);
-                
-               TaskField.TEXT10.alias = "task_code";
+                 ProjectFile file = new ProjectFile();
+ 
+
                
-                
+                 projectFile.setTaskFieldAlias(TaskField.TEXT10, "task_code");
                 
                 MSPDIWriter writer = new MSPDIWriter();
                 foreach (Task task in projectFile.Tasks)
                 {
                     task.Name = task.ActivityID + "_" + task.Name;
                 }
-
+                
                 writer.write(projectFile, file + ".xml");
                 File = "Done";
             }
