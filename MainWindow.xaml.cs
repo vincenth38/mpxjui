@@ -76,7 +76,8 @@ namespace MPXJUI
               // projectFile.getCustomFields().setAlias(TaskField.TEXT10, "task_code");
                
                //  projectFile.setTaskFieldAlias(TaskField.TEXT10, "task_code");
-                  projectFile.setEnterpriseCustomField(10,"task_code");
+             //     projectFile.setEnterpriseCustomField(10,"task_code");
+             projectFile.getCustomFields().getCustomField(11).setAlias("task_code");
                 MSPDIWriter writer = new MSPDIWriter();
                 foreach (Task task in projectFile.Tasks)
                 {
