@@ -58,6 +58,7 @@ namespace MPXJUI
                 Map activities = reader.ActivityFieldMap;
 
                 activities.put(TaskField.TEXT10, "task_code");
+                setFieldByAlias("task_code",TaskField.TEXT10);
                 activities.put(TaskField.TEXT11, "act_work_qty");
                 activities.put(TaskField.TEXT12, "remain_work_qty");
                 activities.put(TaskField.TEXT13, "target_work_qty");
@@ -71,8 +72,8 @@ namespace MPXJUI
                                      
                  ProjectFile projectFile = reader.read(file);
  
-                 Map customFields = projectFile.getCustomFields;
-                customFields.getCustomField(TaskField.TEXT1).setAlias("Code");
+               //  Map customFields = projectFile.getCustomFields;
+                //customFields.getCustomField(TaskField.TEXT1).setAlias("Code");
       
       
      // CustomFieldContainer customFields = projectFile.getCustomFields();
