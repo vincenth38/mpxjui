@@ -74,7 +74,11 @@ namespace MPXJUI
  
                //  Map customFields = projectFile.getCustomFields;
                 //customFields.getCustomField(TaskField.TEXT1).setAlias("Code");
-      
+                customFields = reader.getCustomFields()
+                field = customFields.getCustomField(TaskField.TEXT10)
+                field.setAlias("task_code")
+                customFields.getCustomField(TaskField.TEXT11).setAlias("task_code2")
+
       
      // CustomFieldContainer customFields = projectFile.getCustomFields();
     //  customFields.getCustomField(TaskField.TEXT1).setAlias("Code");
