@@ -69,10 +69,10 @@ namespace MPXJUI
                 activities.put(TaskField.TEXT18, "comments");
                 activities.put(TaskField.TEXT19, "BCR#");
                 
-                Map customFields = reader.getCustomFields();
-                field = customFields.getCustomField(TaskField.TEXT10);
-                field.setAlias("task_code");
-                customFields.getCustomField(TaskField.TEXT11).setAlias("task_code2");
+        //        Map customFields = reader.getCustomFields();
+        //       field = customFields.getCustomField(TaskField.TEXT10);
+        //        field.setAlias("task_code");
+        //        customFields.getCustomField(TaskField.TEXT11).setAlias("task_code2");
                         
                  ProjectFile projectFile = reader.read(file);
  
