@@ -74,7 +74,7 @@ namespace MPXJUI
  
       
                       Map customFields = reader.CustomFields();
-              customFields.getCustomField(TaskField.TEXT10).setAlias("task_code");
+              customFields.CustomField(TaskField.TEXT10).setAlias("task_code");
               
   
                         
