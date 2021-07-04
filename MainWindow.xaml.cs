@@ -73,7 +73,7 @@ namespace MPXJUI
                  ProjectFile projectFile = reader.read(file);
  
       
-                  customFields = reader.CustomFields();
+                  customFields = reader.getCustomFields();
            //   customFields.CustomField(TaskField.TEXT10).setAlias("task_code");
               
   
