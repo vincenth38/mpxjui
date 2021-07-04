@@ -8,6 +8,7 @@ using java.util;
 using net.sf.mpxj.reader;
 using net.sf.mpxj.mspdi;
 using net.sf.mpxj.primavera;
+using net.sf.mpxj.primavera.PrimaveraXERFileReader;
 
 namespace MPXJUI
 {
@@ -73,7 +74,7 @@ namespace MPXJUI
                  ProjectFile projectFile = reader.read(file);
  
       
-                  customFields = reader.getCustomFields();
+                  Map customFields = reader.getCustomFieldsMap();
            //   customFields.CustomField(TaskField.TEXT10).setAlias("task_code");
               
   
